@@ -237,5 +237,16 @@
             "{% endif %}"
         ],
         "description": "Incremental DBT Block"
-    }
+    },
+    "Create CTE": {
+		"prefix": "cte",
+		"body": [
+			"${1:view} as (",
+			"\tselect",
+			"\t\t$0*",
+			"\tfrom {{ref(${2:model})}}",
+			"),",
+			""
+		],
+		"description": "Create SQL CTE"
 }
